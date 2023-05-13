@@ -1,15 +1,9 @@
 import React from "react";
 import { QuizData } from "../QuizData";
 import { Card, Col, Row } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const HeroPage = () => {
-  const navigate = useNavigate();
-
-  const handleClick = (id) => {
-    navigate(`/quizes/${id}`);
-  };
-
   return (
     <div>
       <Row className="justify-content-center px-4">
