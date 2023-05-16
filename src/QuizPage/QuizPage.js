@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { QuizData } from "../QuizData";
+import { useParams } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 const QuizPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const quizzId = useParams().id;
+  const Quizz = QuizData.find((item) => item.id == quizzId);
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
@@ -13,7 +16,7 @@ const QuizPage = () => {
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < QuizData.length) {
+    if (nextQuestion < Quizz.quizzQuestions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
@@ -31,7 +34,7 @@ const QuizPage = () => {
           <Row className="justify-content-center text-center">
             <Col xs={12}>
               <h4 className="score-section">
-                You scored {score} out of {QuizData.length}
+                You scored {score} out of {Quizz.quizzQuestions.length}
               </h4>
             </Col>
           </Row>
@@ -48,13 +51,13 @@ const QuizPage = () => {
           <Row className="justify-content-center">
             <Col xs={12} className="text-center">
               <h4>
-                Question {currentQuestion + 1}/{QuizData.length}
+                Question {currentQuestion + 1}/{Quizz.quizzQuestions.length}
               </h4>
-              <p>{QuizData[currentQuestion].questionText}</p>
+              <p>{Quizz.quizzQuestions[currentQuestion].questionText}</p>
             </Col>
           </Row>
           <Row className="justify-content-center">
-            {QuizData[currentQuestion].answerOptions.map(
+            {Quizz.quizzQuestions[currentQuestion].answerOptions.map(
               (answerOption, index) => (
                 <Col
                   xs={12}
