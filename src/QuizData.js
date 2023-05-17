@@ -90,7 +90,7 @@ export const QuizData = [
     id: 2,
     previewData: {
       bgImage: quizCardBg,
-      title: "Quiz Title1",
+      title: "Функції",
     },
     quizzTheory: {
       image: quizCardBg,
@@ -174,7 +174,7 @@ export const QuizData = [
     id: 3,
     previewData: {
       bgImage: quizCardBg,
-      title: "Quiz Title1",
+      title: "Геометричні фігури",
     },
     quizzTheory: {
       image: quizCardBg,
@@ -257,7 +257,7 @@ export const QuizData = [
     id: 4,
     previewData: {
       bgImage: quizCardBg,
-      title: "Quiz Title1",
+      title: "Дроби",
     },
     quizzTheory: {
       image: quizCardBg,
