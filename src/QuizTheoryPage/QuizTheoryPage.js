@@ -6,7 +6,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 const QuizTheoryPage = () => {
   const quizzId = useParams().id;
-  const Quizz = QuizData.find((item) => item.id == quizzId);
+  const Quizz = QuizData.find((item) => item.id.toString === quizzId);
   return (
     <div>
       <Container
