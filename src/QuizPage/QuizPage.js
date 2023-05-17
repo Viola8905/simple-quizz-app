@@ -8,7 +8,7 @@ const QuizPage = () => {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const quizzId = useParams().id;
-  const Quizz = QuizData.find((item) => item.id == quizzId);
+  const Quizz = QuizData.find((item) => item.id.toString() === quizzId.toString());
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
