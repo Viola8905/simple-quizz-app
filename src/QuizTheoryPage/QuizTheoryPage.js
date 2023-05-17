@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { QuizData } from "../QuizData";
 import { Link, useParams } from "react-router-dom";
 
